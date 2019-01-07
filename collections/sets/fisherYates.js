@@ -3,7 +3,7 @@
  * @return {*[]}
  */
 export default function fisherYates(originalArray) {
-  // Clone array from preventing original array from modification (for testing purpose).
+  // Clone array, preventing original array from modification (for testing purpose).
   const array = originalArray.slice(0);
 
   for (let i = (array.length - 1); i > 0; i -= 1) {

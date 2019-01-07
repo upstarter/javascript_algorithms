@@ -9,32 +9,33 @@ export default function rabinKarp(text, word) {
   const hasher = new PolynomialHash();
 
   // Calculate word hash that we will use for comparison with other substring hashes.
-  const wordHash = hasher.hash(word);
+  const w = hasher.hash(word);
 
-  let prevFrame = null;
-  let currentFrameHash = null;
+  let pf = null;  // previous frame
+  let cfh = null; // current frame hash
+  let l = word.length;
 
   // Go through all substring of the text that may match.
-  for (let charIndex = 0; charIndex <= (text.length - word.length); charIndex += 1) {
-    const currentFrame = text.substring(charIndex, charIndex + word.length);
+  for (let i = 0; i <= (text.length - l); i += 1) {
+    const cf = text.substring(i, i + l); // current frame
 
     // Calculate the hash of current substring.
-    if (currentFrameHash === null) {
-      currentFrameHash = hasher.hash(currentFrame);
+    if (cfh === null) {
+      cfh = hasher.hash(cf);
     } else {
-      currentFrameHash = hasher.roll(currentFrameHash, prevFrame, currentFrame);
+      cfh = hasher.roll(cfh, pf, cf);
     }
 
-    prevFrame = currentFrame;
+    pf = cf;
 
     // Compare the hash of current substring and seeking string.
     // In case if hashes match let's make sure that substrings are equal.
     // In case of hash collision the strings may not be equal.
     if (
-      wordHash === currentFrameHash
-      && text.substr(charIndex, word.length) === word
+      w === cfh
+      && text.substr(i, l) === word
     ) {
-      return charIndex;
+      return i;
     }
   }
 

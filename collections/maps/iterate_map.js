@@ -14,7 +14,6 @@ myMap.forEach((value, key) => {
 
 console.log('*************')
 // reduce
-
 myMap.entries(myMap).reduce( (acc, i) => {
   acc.push(i);
   return acc;
