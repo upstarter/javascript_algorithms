@@ -28,7 +28,6 @@ let data = [
 ]
 
 let groups = data.map(arrange)
-
 console.log(groups)
 
 let byID = g => {
@@ -39,10 +38,8 @@ let byID = g => {
     }
 }
 
-// weird hack
 const flatten = groups => groups.flatMap(group => [group, ...flatten(group.groups)]);
 
 console.log(flatten(groups))
 const filtered = filter(flatten(groups), byID);
-
 console.log(filtered)
