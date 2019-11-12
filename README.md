@@ -68,3 +68,19 @@ export default (x) => Math.exp(x)
 import exp, { pi, e } from "lib/mathplusplus"
 console.log("e^{π} = " + exp(pi))
 ```
+
+#### Meta-Programming
+### Proxying
+Hooking into runtime-level object meta-operations.
+```js
+let target = {
+    foo: "Welcome, foo"
+}
+let proxy = new Proxy(target, {
+    get (receiver, name) {
+        return name in receiver ? receiver[name] : `Hello, ${name}`
+    }
+})
+proxy.foo   === "Welcome, foo"
+proxy.world === "Hello, world"
+```
