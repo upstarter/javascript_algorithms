@@ -1,7 +1,7 @@
 # javascript_algorithms
 Javascript Algorithms
 
-Dynamic Property Names
+### Dynamic Property Names
 ES6 adds the ability to create or add properties with dynamically assigned keys.
 
 ```javascript
@@ -16,7 +16,7 @@ console.log(a)
 // {sheffield_population: 350000, sheffield_county: 'South Yorkshire' }
 ```
 
-for … of Loops
+### for … of Loops
 ES6 adds a way to iterate over each of the values in an array. This is different from the existing for ... in loop that loops over the key/index.
 
 ```javascript
