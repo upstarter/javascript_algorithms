@@ -34,3 +34,21 @@ Using the new for … of loop saves adding a let val = a[idx] inside each loop.
 
 Arrays, strings, generators and collections are all iterable in standard JavaScript. Plain objects can't normally be iterated over, unless you have defined an iterator for it.
 
+#### Destructuring Assignment
+Parameter Context Matching
+Intuitive and flexible destructuring of Arrays and Objects into individual parameters during function calls.
+ECMAScript 6 — syntactic sugar: reduced | traditional
+```javascript
+function f ([ name, val ]) {
+    console.log(name, val)
+}
+function g ({ name: n, val: v }) {
+    console.log(n, v)
+}
+function h ({ name, val }) {
+    console.log(name, val)
+}
+f([ "bar", 42 ])
+g({ name: "foo", val:  7 })
+h({ name: "bar", val: 42 })
+```
