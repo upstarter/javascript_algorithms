@@ -69,8 +69,8 @@ import exp, { pi, e } from "lib/mathplusplus"
 console.log("e^{π} = " + exp(pi))
 ```
 
-#### Meta-Programming
-### Proxying
+### Meta-Programming
+#### Proxying
 Hooking into runtime-level object meta-operations.
 ```js
 let target = {
