@@ -37,7 +37,7 @@ Arrays, strings, generators and collections are all iterable in standard JavaScr
 #### Destructuring Assignment
 Parameter Context Matching
 Intuitive and flexible destructuring of Arrays and Objects into individual parameters during function calls.
-ECMAScript 6 — syntactic sugar: reduced | traditional
+
 ```javascript
 function f ([ name, val ]) {
     console.log(name, val)
@@ -56,7 +56,7 @@ h({ name: "bar", val: 42 })
 #### Modules
 Default & Wildcard
 Marking a value as the default exported value and mass-mixin of values.
-ECMAScript 6 — syntactic sugar: reduced | traditional
+
 
 ```javascript
 //  lib/mathplusplus.js
